@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Indian Art History — Interactive Map</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-symbol">✦</div>
+
+            <div>
+                <h1>Indian Art History</h1>
+                <span>AN INTERACTIVE CULTURAL ATLAS</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#explore">Explore</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-pattern"></div>
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                THE ART OF A CIVILIZATION
+            </span>
+
+            <h2>
+                A Journey Through
+                <em>Indian Art</em>
+            </h2>
+
+            <p>
+                Explore the places, traditions and stories that shaped
+                India's artistic heritage — from prehistoric rock shelters
+                to living folk traditions.
+            </p>
+
+            <a href="#explore" class="hero-button">
+                Explore the Map
+                <span>↓</span>
+            </a>
+
+        </div>
+
+        <div class="hero-decoration">
+            <span>ॐ</span>
+        </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="intro" id="explore">
+
+        <div class="intro-heading">
+
+            <span class="section-number">01</span>
+
+            <div>
+                <span class="eyebrow">THE ATLAS</span>
+
+                <h2>
+                    Discover India's
+                    <br>
+                    <em>artistic landscape</em>
+                </h2>
+            </div>
+
+        </div>
+
+        <p class="intro-text">
+            Twelve locations. Thousands of years of artistic expression.
+            Explore the geographic spread and evolution of India's
+            visual traditions through an interactive map.
+        </p>
+
+    </section>
+
+
+    <!-- FILTER AREA -->
+    <section class="explorer">
+
+        <div class="explorer-top">
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search a place, art form or tradition..."
+                >
+
+            </div>
+
+            <div class="location-counter">
+                <strong id="locationCount" aria-live="polite">12</strong>
+                <span>ART CENTERS</span>
+            </div>
+
+            <div class="explorer-actions">
+                <button class="action-button action-button-primary" id="randomLocationBtn" type="button">
+                    <span aria-hidden="true">✦</span>
+                    Surprise me
+                </button>
+                <button class="action-button" id="resetFiltersBtn" type="button">
+                    Reset filters
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- TIMELINE FILTER -->
+        <div class="timeline" id="timeline">
+
+            <button class="era-btn active" data-era="all">
+                <span>All</span>
+            </button>
+
+            <button class="era-btn" data-era="prehistoric">
+                <span>Prehistoric</span>
+                <small>10,000 BCE+</small>
+            </button>
+
+            <button class="era-btn" data-era="ancient">
+                <span>Ancient</span>
+                <small>600 BCE – 600 CE</small>
+            </button>
+
+            <button class="era-btn" data-era="medieval">
+                <span>Medieval</span>
+                <small>600 – 1500</small>
+            </button>
+
+            <button class="era-btn" data-era="early-modern">
+                <span>Early Modern</span>
+                <small>1500 – 1900</small>
+            </button>
+
+            <button class="era-btn" data-era="traditional">
+                <span>Living Traditions</span>
+                <small>Present</small>
+            </button>
+
+            <button class="era-btn" data-era="modern">
+                <span>Modern</span>
+                <small>1900+</small>
+            </button>
+
+        </div>
+
+
+        <!-- MAP + DETAILS -->
+        <div class="map-container">
+
+            <div id="map"></div>
+
+            <aside class="art-panel" id="artPanel">
+
+                <div class="panel-empty">
+
+                    <div class="mandala">
+                        ✦
+                    </div>
+
+                    <span class="eyebrow">
+                        SELECT A LOCATION
+                    </span>
+
+                    <h3>
+                        Begin your journey
+                    </h3>
+
+                    <p>
+                        Select a marker on the map to uncover
+                        the history, artistic traditions and
+                        cultural stories of that region.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="about-number">
+            02
+        </div>
+
+        <div class="about-content">
+
+            <span class="eyebrow">
+                ABOUT THE PROJECT
+            </span>
+
+            <h2>
+                Mapping the
+                <em>creative memory</em>
+                of India.
+            </h2>
+
+            <p>
+                Indian Art History Interactive Map is a lightweight
+                digital atlas designed to make India's artistic heritage
+                easier to explore geographically.
+            </p>
+
+            <p>
+                From rock paintings and Buddhist murals to miniature
+                traditions and contemporary art, the map connects
+                places with the artistic movements that emerged there.
+            </p>
+
+        </div>
+
+        <div class="about-symbol">
+            ॐ
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+            <strong>INDIAN ART HISTORY</strong>
+            <span>Interactive Cultural Atlas</span>
+        </div>
+
+        <p>
+            Built with HTML · CSS · JavaScript · Leaflet · OpenStreetMap
+        </p>
+
+    </footer>
+
+
+    <!-- LEAFLET -->
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <!-- CUSTOM JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
